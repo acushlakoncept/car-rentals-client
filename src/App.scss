@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap");
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 300;
   color: #373737;
-  background-color:#b9b6b6;
+  background-color: #b9b6b6;
 }
 
 .container {
@@ -15,7 +15,7 @@ body {
 .header {
   width: 100%;
   height: 400px;
-  background: url('./imgs/head_image.jpg') bottom center no-repeat;
+  background: url("./imgs/head_image.jpg") bottom center no-repeat;
   padding: 30px;
 
   &-content {
@@ -32,14 +32,13 @@ body {
       font-weight: 100;
       text-shadow: 0 1px 1px rgba($color: #000000, $alpha: 0.4);
     }
-    
   }
 }
 
 .about-section {
   padding: 30px;
   background-color: #fff;
-  
+
   &__sub {
     text-transform: uppercase;
     color: #b9b6b6;
@@ -47,7 +46,7 @@ body {
     font-size: 13px;
   }
 
-  &__primary, 
+  &__primary,
   &__left-title {
     text-align: center;
     font-size: 25px;
@@ -71,7 +70,7 @@ body {
 
 .call-action {
   height: 150px;
-  background: url('./imgs/call_action.jpg') top center no-repeat;
+  background: url("./imgs/call_action.jpg") top center no-repeat;
   color: #e8f0ff;
   display: flex;
   flex-direction: column;
@@ -102,4 +101,32 @@ body {
 
 .white {
   color: #fff !important;
+}
+
+.login-box {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.login-box::after {
+  content: "";
+  background: url("./imgs/head_image.jpg") bottom center no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.form-control {
+  border-radius: 20px !important;
+  padding: 5px 10px;
 }

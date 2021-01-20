@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function Navigation() {
   return (
@@ -9,10 +10,10 @@ export default function Navigation() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" />
         <Nav>
-          <Nav.Link href="#deets" className="white">SIGN IN</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
+          <Link className="nav-link white" to="/login">SIGN IN</Link>
+          <Link className="nav-link" to="/register">
             <span className="btn-menu">SIGN UP</span>
-          </Nav.Link>
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

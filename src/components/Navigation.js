@@ -9,9 +9,9 @@ export default function Navigation() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" />
         <Nav>
-          <Nav.Link href="#deets">Sign in</Nav.Link>
+          <Nav.Link href="#deets" className="white">SIGN IN</Nav.Link>
           <Nav.Link eventKey={2} href="#memes">
-            Sign up
+            <span className="btn-menu">SIGN UP</span>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

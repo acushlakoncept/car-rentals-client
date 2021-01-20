@@ -13,7 +13,7 @@ export default function Header() {
           Classy rides that meets your taste.
         </p>
         <p>
-          <a href="#register" className="btn btn-danger rounded">Hire Now</a>
+          <a href="#register" className="btn btn-oval">Hire Now</a>
         </p>
       </div>
     </header>

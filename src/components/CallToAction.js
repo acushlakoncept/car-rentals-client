@@ -5,7 +5,7 @@ export default function CallToAction() {
     <section className="call-action">
       <h4>Be where you want to be on time</h4>
       <p>
-        <a href="#register" className="btn btn-danger rounded">
+        <a href="#register" className="btn btn-oval">
           Book your ride
         </a>
       </p>

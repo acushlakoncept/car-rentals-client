@@ -21,7 +21,7 @@ export default function AboutSection() {
             related issues
           </p>
           <p>
-            <a href="#register" className="btn btn-danger rounded">
+            <a href="#register" className="btn btn-oval">
               Learn more
             </a>
           </p>

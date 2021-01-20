@@ -4,6 +4,8 @@ import '../App.scss';
 import Header from '../components/Header';
 import AboutSection from '../components/AboutSection';
 import FeatureSection from '../components/FeatureSection';
+import CallToAction from '../components/CallToAction';
+import Footer from '../components/Footer';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Header />
       <AboutSection />
       <FeatureSection />
+      <CallToAction />
+      <Footer />
     </Container>
   );
 }

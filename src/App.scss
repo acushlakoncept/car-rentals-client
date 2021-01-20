@@ -4,6 +4,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   color: #373737;
+  background-color:#b9b6b6;
 }
 
 .App {
@@ -76,6 +77,7 @@ body {
 
 .about-section {
   padding: 30px;
+  background-color: #fff;
   
   &__sub {
     text-transform: uppercase;
@@ -104,4 +106,19 @@ body {
 
 .feature-section {
   background-color: #e8f0ff;
+}
+
+.call-action {
+  height: 150px;
+  background: url('./imgs/call_action.jpg') top center no-repeat;
+  color: #e8f0ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  color: #b9b6b6;
+  text-align: center;
 }

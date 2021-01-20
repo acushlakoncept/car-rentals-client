@@ -7,7 +7,7 @@ import FeatureSection from '../components/FeatureSection';
 
 function App() {
   return (
-    <Container fluid="sm" className="mobile-width">
+    <Container>
       <Header />
       <AboutSection />
       <FeatureSection />

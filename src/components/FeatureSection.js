@@ -9,8 +9,8 @@ export default function FeatureSection() {
         <Col sm={6}>
           <img src={car} className="img-fluid" alt="ride" />
         </Col>
-        <Col sm={6}>
-          <h4 className="about-section__left-title">
+        <Col sm={6} className="pt-5">
+          <h4 className="about-section__left-title pt-5">
             Best rides for your trips
           </h4>
           <p className="about-section__desc">

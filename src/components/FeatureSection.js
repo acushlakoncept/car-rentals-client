@@ -5,7 +5,7 @@ import car from '../imgs/feature-ride.png';
 export default function FeatureSection() {
   return (
     <section className="about-section feature-section">
-      <Row className="mt-5">
+      <Row className="mt-2">
         <Col sm={6}>
           <img src={car} className="img-fluid" alt="ride" />
         </Col>

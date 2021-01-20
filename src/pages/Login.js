@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
@@ -21,6 +22,7 @@ export default function Login() {
         <Button className="btn-oval pl-4 pr-4" type="submit">
           Sign in
         </Button>
+        <Link className="nav-link text-danger" to="/">&larr; Back to home</Link>
       </Form>
     </Container>
   );

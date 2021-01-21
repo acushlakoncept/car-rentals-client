@@ -1,23 +1,38 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
-import ride from '../imgs/ride.jpg';
+import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-export default function CarItem() {
+export default function CarItem({ car }) {
   return (
     <Card style={{ width: '18rem' }} className="m-2">
-      <Card.Img variant="top" src={ride} />
+      <Card.Img variant="top" src={car.image} />
       <Card.Body>
-        <Card.Title className="font-weight-bold">Toyota Corolla 2011 Silver</Card.Title>
+        <Card.Title className="font-weight-bold">{ car.name }</Card.Title>
         <Card.Text>
-          <span className="badge badge-secondary">Automatic</span>
+          <span className="badge badge-secondary">{ car.transmission }</span>
           {' '}
           {' '}
-          <span className="badge badge-pill badge-success">AC - Yes </span>
+          <span className="badge badge-pill badge-success">
+            AC -
+            { car.ac }
+          </span>
           {' '}
-          <span className="badge badge-info">2021-01-18</span>
+          <span className="badge badge-info">{ car.date_added }</span>
         </Card.Text>
-        <Button className="btn-oval w-100">Hire now</Button>
+        <Link href={`cars/${car.id}`} className="btn-oval">Hire now</Link>
       </Card.Body>
     </Card>
   );
 }
+
+CarItem.propTypes = {
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    transmission: PropTypes.string.isRequired,
+    ac: PropTypes.string.isRequired,
+    date_added: PropTypes.string.isRequired,
+  }).isRequired,
+};

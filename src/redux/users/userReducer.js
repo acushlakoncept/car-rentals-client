@@ -1,32 +1,36 @@
 import {
   LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS,
-  REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS,
 } from './userTypes';
 
 const initialState = {
   loading: false,
+  login: false,
   user: {},
+  token: localStorage.getItem('CarRentalsToken'),
   error: '',
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_REQUEST || REGISTER_REQUEST:
+    case LOGIN_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case LOGIN_SUCCESS || REGISTER_SUCCESS:
+    case LOGIN_SUCCESS:
       return {
         ...state,
         loading: false,
+        login: true,
         user: action.payload,
+        token: localStorage.setItem('CarRentalsToken', action.payload.token),
         error: '',
       };
-    case LOGIN_FAILURE || REGISTER_FAILURE:
+    case LOGIN_FAILURE:
       return {
         ...state,
         loading: false,
+        login: false,
         user: {},
         error: action.payload,
       };

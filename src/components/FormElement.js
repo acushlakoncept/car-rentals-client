@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function FormElement({ type, handleSubmit }) {
+function FormElement({
+  type, handleSubmit, username, password,
+}) {
+  // const username = useRef(null);
+  // const password = useRef(null);
+
+  useEffect(() => {
+    username.current.focus();
+  }, []);
+
   return (
     <Form className="w-50" onSubmit={handleSubmit}>
       <Form.Group controlId="formBasicEmail">
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Control type="text" placeholder="Enter username" ref={username} />
       </Form.Group>
 
       <Form.Group controlId="formBasicPassword">
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control type="password" placeholder="Password" ref={password} />
       </Form.Group>
       <Button className="btn-oval pl-4 pr-4" type="submit">
         { type }
@@ -25,7 +34,14 @@ function FormElement({ type, handleSubmit }) {
 
 FormElement.propTypes = {
   type: PropTypes.string.isRequired,
+  username: PropTypes.instanceOf(Object).isRequired,
+  password: PropTypes.instanceOf(Object).isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };
+
+// FormElement.defaultProps = {
+//   username: null,
+//   password: null,
+// };
 
 export default FormElement;

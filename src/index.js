@@ -8,7 +8,7 @@ import './App.scss';
 import store from './redux/store';
 
 axios.defaults.baseURL = 'http://localhost:3001/api/v1';
-axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('token')}`;
+axios.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('CarRentalsToken')}`;
 
 ReactDOM.render(
   <React.StrictMode>

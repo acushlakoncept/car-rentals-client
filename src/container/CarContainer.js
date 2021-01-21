@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Container } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import { ScaleLoader } from 'react-spinners';
 import CarItem from '../components/CarItem';
 import { fetchCars } from '../redux/actions';
@@ -40,5 +42,20 @@ const mapDispatchToProps = dispatch => ({
   getCars: () => dispatch(fetchCars()),
 });
 
+CarContainer.propTypes = {
+  carData: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    cars: PropTypes.instanceOf(Array).isRequired,
+    error: PropTypes.string,
+  }),
+  getCars: PropTypes.func.isRequired,
+};
 
-export default CarContainer;
+CarContainer.defaultProps = {
+  carData: {
+    cars: [],
+    loading: false,
+  },
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CarContainer);

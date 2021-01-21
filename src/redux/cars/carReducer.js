@@ -26,7 +26,7 @@ const carReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        stocks: [],
+        cars: [],
         error: action.payload,
       };
     default:

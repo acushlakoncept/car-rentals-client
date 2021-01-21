@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {
   LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS,
-  REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS,
 } from './userTypes';
 
 export const userLoginRequest = () => ({
@@ -18,20 +17,6 @@ export const userLoginFailure = error => ({
   payload: error,
 });
 
-export const userRegisterRequest = () => ({
-  type: REGISTER_REQUEST,
-});
-
-export const userRegisterSuccess = user => ({
-  type: REGISTER_SUCCESS,
-  payload: user,
-});
-
-export const userRegisterFailure = error => ({
-  type: REGISTER_FAILURE,
-  payload: error,
-});
-
 // eslint-disable-next-line func-names
 export const loginUser = data => function (dispatch) {
   dispatch(userLoginRequest());
@@ -40,22 +25,9 @@ export const loginUser = data => function (dispatch) {
     .then(response => {
       const { data } = response;
       dispatch(userLoginSuccess(data));
+      window.location.href = '/cars';
     })
     .catch(error => {
       dispatch(userLoginFailure(error.response.data.error));
-    });
-};
-
-// eslint-disable-next-line func-names
-export const registerUser = data => function (dispatch) {
-  dispatch(userRegisterRequest());
-  axios
-    .post('/register', data)
-    .then(response => {
-      const { data } = response;
-      dispatch(userRegisterSuccess(data));
-    })
-    .catch(error => {
-      dispatch(userRegisterFailure(error.response.data.error));
     });
 };

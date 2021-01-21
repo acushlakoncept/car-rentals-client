@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { ScaleLoader } from 'react-spinners';
@@ -11,13 +11,14 @@ function CarContainer({ carData, getCars }) {
   useEffect(() => {
     getCars();
   }, []);
+  const token = useSelector(state => state.user.token);
 
   // eslint-disable-next-line no-nested-ternary
   return carData.loading ? (
     <h2 className="text-center pt-5">
       <ScaleLoader size={16} color="orange" />
     </h2>
-  ) : carData.error ? (
+  ) : token === undefined || token === 'undefined' ? (
     <h2 className="text-center pt-5 white">
       { carData.error }
       <Redirect to="/login" />
@@ -49,6 +50,7 @@ CarContainer.propTypes = {
     loading: PropTypes.bool.isRequired,
     cars: PropTypes.instanceOf(Array).isRequired,
     error: PropTypes.string,
+    token: PropTypes.string,
   }),
   getCars: PropTypes.func.isRequired,
 };

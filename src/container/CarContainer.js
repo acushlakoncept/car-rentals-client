@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { ScaleLoader } from 'react-spinners';
+import { Redirect } from 'react-router-dom';
 import CarItem from '../components/CarItem';
 import { fetchCars } from '../redux/actions';
 
@@ -17,8 +18,9 @@ function CarContainer({ carData, getCars }) {
       <ScaleLoader size={16} color="orange" />
     </h2>
   ) : carData.error ? (
-    <h2 className="text-center pt-5">
+    <h2 className="text-center pt-5 white">
       { carData.error }
+      <Redirect to="/login" />
     </h2>
   ) : (
     <Container className="bg-dark">

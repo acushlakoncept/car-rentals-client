@@ -6,6 +6,7 @@ import App from './pages/App';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Cars from './pages/Cars';
+import CarItemDetail from './pages/CarItemDetail';
 
 const Routes = () => (
   <BrowserRouter>
@@ -14,6 +15,7 @@ const Routes = () => (
       <Route exact path="/cars" component={Cars} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/cars/:id" component={CarItemDetail} />
       <Route
         exact
         path="/logout"

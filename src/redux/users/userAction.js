@@ -41,8 +41,8 @@ export const loginUser = data => function (dispatch) {
       const { data } = response;
       dispatch(userLoginSuccess(data));
     })
-    .catch(e => {
-      dispatch(userLoginFailure(e.error));
+    .catch(error => {
+      dispatch(userLoginFailure(error.response.data.error));
     });
 };
 
@@ -55,7 +55,7 @@ export const registerUser = data => function (dispatch) {
       const { data } = response;
       dispatch(userRegisterSuccess(data));
     })
-    .catch(e => {
-      dispatch(userRegisterFailure(e.error));
+    .catch(error => {
+      dispatch(userRegisterFailure(error.response.data.error));
     });
 };

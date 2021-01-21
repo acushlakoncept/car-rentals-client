@@ -20,7 +20,7 @@ export default function CarItem({ car }) {
           {' '}
           <span className="badge badge-info">{ car.date_added }</span>
         </Card.Text>
-        <Link href={`cars/${car.id}`} className="btn-oval">Hire now</Link>
+        <Link to={`cars/${car.id}`} className="btn-oval p-2">Hire now</Link>
       </Card.Body>
     </Card>
   );

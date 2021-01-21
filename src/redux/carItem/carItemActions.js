@@ -26,7 +26,7 @@ export const fetchCarItem = id => function (dispatch) {
       const { data } = response;
       dispatch(fetchCarItemSuccess(data));
     })
-    .catch(e => {
-      dispatch(fetchCarItemFailure(e.error));
+    .catch(error => {
+      dispatch(fetchCarItemFailure(error.response.data.error));
     });
 };

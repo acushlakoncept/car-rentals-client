@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import logo from '../imgs/logo_white.png';
 
 export default function Navigation() {
   // const token = useSelector(state => state);
@@ -10,7 +11,7 @@ export default function Navigation() {
 
   return (
     <Navbar collapseOnSelect expand="sm">
-      <Navbar.Brand href="/">Car Rentals</Navbar.Brand>
+      <Navbar.Brand href="/"><img className="logo" src={logo} alt="Car Rentals" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto" />

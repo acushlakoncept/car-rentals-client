@@ -1,9 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../imgs/logo_dark.png';
 
 export default function Footer() {
   return (
     <section className="about-section footer">
-      <h2 className="about-section__primary">Car Rentals </h2>
+      <h2 className="about-section__primary">
+        <Link className="nav-link white" to="/">
+          <img className="logo" src={logo} alt="Car Rentals" />
+        </Link>
+      </h2>
       <p>
         Plot 1 Unit F, Ewet Housing Estate
         {' '}

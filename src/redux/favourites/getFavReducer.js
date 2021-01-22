@@ -8,19 +8,19 @@ const initialState = {
 
 const getFavReducer = (state = initialState, action) => {
   switch (action.type) {
-    case fav.ADD_FAVORITE_REQUEST:
+    case fav.FETCH_FAVORITE_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case fav.ADD_FAVORITE_SUCCESS:
+    case fav.FETCH_FAVORITE_SUCCESS:
       return {
         ...state,
         loading: false,
         cars: action.payload,
         error: '',
       };
-    case fav.ADD_FAVORITE_FAILURE:
+    case fav.FETCH_FAVORITE_FAILURE:
       return {
         ...state,
         loading: false,

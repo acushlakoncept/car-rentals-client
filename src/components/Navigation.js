@@ -25,7 +25,13 @@ export default function Navigation() {
                   </Link>
                 </>
               )
-              : (<Link className="nav-link white" to="/logout">LOGOUT</Link>)
+              : (
+                <>
+                  <Link className="nav-link white" to="/cars">CARS</Link>
+                  <Link className="nav-link white" to="/favourites">Favourite Cars</Link>
+                  <Link className="nav-link white" to="/logout">LOGOUT</Link>
+                </>
+              )
           }
         </Nav>
       </Navbar.Collapse>

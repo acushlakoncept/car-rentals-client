@@ -21,11 +21,7 @@ export const fetchCarsFailure = error => ({
 export const fetchCars = () => function (dispatch) {
   dispatch(fetchCarsRequest());
   axios
-    .get('/cars', { mode: 'cors' }, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('CarRentalsToken')}`,
-      },
-    })
+    .get('/cars', { mode: 'cors' })
     .then(response => {
       const { data } = response;
       dispatch(fetchCarsSuccess(data));

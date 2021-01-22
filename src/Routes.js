@@ -23,7 +23,7 @@ const Routes = () => (
         path="/logout"
         render={() => {
           localStorage.setItem('CarRentalsToken', undefined);
-          // return <Redirect to="/login" />;
+          localStorage.setItem('CarRentalsUser', '');
           window.location.href = '/login';
         }}
       />

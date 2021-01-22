@@ -20,7 +20,7 @@ function CarContainer({ carData, getCars }) {
       car_id: id,
     };
     dispatch(addFavourites(carInfo));
-    alert(favState.message);
+    alert(favState.message || favState.error);
   };
 
   // eslint-disable-next-line no-nested-ternary

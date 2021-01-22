@@ -20,6 +20,7 @@ function CarContainer({ carData, getCars }) {
       car_id: id,
     };
     dispatch(addFavourites(carInfo));
+    // eslint-disable-next-line no-alert
     alert(favState.message || favState.error);
   };
 

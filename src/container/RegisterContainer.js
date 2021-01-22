@@ -26,11 +26,6 @@ function RegisterContainer({ userData, signupUser }) {
     error = userData.error;
   }
 
-  // if (userData.user) {
-  //   localStorage.setItem('CarRentalsToken', userData.user.token);
-  //     <Redirect to="/cars" />;
-  // }
-
   return userData.token === undefined || userData.token === 'undefined'
     ? (
       <>

@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import logo from '../imgs/logo_white.png';
 
 export default function Navigation() {
-  // const token = useSelector(state => state);
-  // const token = useSelector(state => state.getIn(['user', 'token']));
   const token = useSelector(state => state.user.token);
   const username = useSelector(state => state.user.username);
 

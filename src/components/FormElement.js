@@ -6,9 +6,6 @@ import { Link } from 'react-router-dom';
 function FormElement({
   type, handleSubmit, username, password,
 }) {
-  // const username = useRef(null);
-  // const password = useRef(null);
-
   useEffect(() => {
     username.current.focus();
   }, []);
@@ -38,10 +35,5 @@ FormElement.propTypes = {
   password: PropTypes.instanceOf(Object).isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };
-
-// FormElement.defaultProps = {
-//   username: null,
-//   password: null,
-// };
 
 export default FormElement;

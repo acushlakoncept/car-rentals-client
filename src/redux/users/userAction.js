@@ -28,6 +28,10 @@ export const loginUser = data => function (dispatch) {
       window.location.href = '/cars';
     })
     .catch(error => {
-      dispatch(userLoginFailure(error.response.data.error));
+      if (!error.status) {
+        dispatch(userLoginFailure('Error connecting to API Server'));
+      } else {
+        dispatch(userLoginFailure(error.response.data.error));
+      }
     });
 };

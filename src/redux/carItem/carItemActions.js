@@ -27,6 +27,10 @@ export const fetchCarItem = id => function (dispatch) {
       dispatch(fetchCarItemSuccess(data));
     })
     .catch(error => {
-      dispatch(fetchCarItemFailure(error.response.data.error));
+      if (!error.status) {
+        dispatch(fetchCarItemFailure('Error connecting to API Server'));
+      } else {
+        dispatch(fetchCarItemFailure(error.response.data.error));
+      }
     });
 };

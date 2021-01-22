@@ -8,6 +8,7 @@ export default function Navigation() {
   // const token = useSelector(state => state);
   // const token = useSelector(state => state.getIn(['user', 'token']));
   const token = useSelector(state => state.user.token);
+  const username = useSelector(state => state.user.username);
 
   return (
     <Navbar collapseOnSelect expand="sm">
@@ -30,7 +31,11 @@ export default function Navigation() {
                 <>
                   <Link className="nav-link white" to="/cars">CARS</Link>
                   <Link className="nav-link white" to="/favourites">Favourite Cars</Link>
-                  <Link className="nav-link white" to="/logout">LOGOUT</Link>
+                  <Link className="nav-link white" to="/logout">
+                    LOGOUT
+                    {' '}
+                    {username}
+                  </Link>
                 </>
               )
           }

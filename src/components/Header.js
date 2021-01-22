@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
 export default function Header() {
@@ -13,7 +14,7 @@ export default function Header() {
           Classy rides that meets your taste.
         </p>
         <p>
-          <a href="#register" className="btn btn-oval">Hire Now</a>
+          <Link className="btn btn-oval" to="/register">Hire Now</Link>
         </p>
       </div>
     </header>

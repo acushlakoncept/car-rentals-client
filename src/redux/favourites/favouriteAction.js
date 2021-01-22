@@ -27,10 +27,6 @@ export const addFavourites = data => function (dispatch) {
       dispatch(addFavoritesSuccess(data.message));
     })
     .catch(error => {
-      if (!error.status) {
-        dispatch(addFavoritesFailure('Error connecting to API Server'));
-      } else {
-        dispatch(addFavoritesFailure(error.response.data.error));
-      }
+      dispatch(addFavoritesFailure(error.response.data.error));
     });
 };

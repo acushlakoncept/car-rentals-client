@@ -27,10 +27,6 @@ export const fetchCars = () => function (dispatch) {
       dispatch(fetchCarsSuccess(data));
     })
     .catch(error => {
-      if (!error.status) {
-        dispatch(fetchCarsFailure('Error connecting to API Server'));
-      } else {
-        dispatch(fetchCarsFailure(error.response.data.error));
-      }
+      dispatch(fetchCarsFailure(error.response.data.error));
     });
 };

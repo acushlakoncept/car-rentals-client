@@ -27,10 +27,6 @@ export const fetchFavourites = () => function (dispatch) {
       dispatch(fetchFavoritesSuccess(data));
     })
     .catch(error => {
-      if (!error.status) {
-        dispatch(fetchFavoritesFailure('Error connecting to API Server'));
-      } else {
-        dispatch(fetchFavoritesFailure(error.response.data.error));
-      }
+      dispatch(fetchFavoritesFailure(error.response.data.error));
     });
 };

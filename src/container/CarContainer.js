@@ -37,7 +37,6 @@ function CarContainer({ carData, getCars }) {
   ) : (
     <Container className="bg-dark">
       <div className="mt-5 d-flex flex-wrap justify-content-center">
-        <h2 className="text-center pt-5 white">{ carData.error }</h2>
         { carData.cars.map(carInfo => (
           <CarItem
             key={carInfo.id}

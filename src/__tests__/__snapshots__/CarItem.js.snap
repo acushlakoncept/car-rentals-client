@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CarItem correctly 1`] = `
+<div
+  className="m-2 card"
+  style={
+    Object {
+      "width": "18rem",
+    }
+  }
+>
+  <img
+    className="card-img-top"
+    src="https://source.unsplash.com/800x600/?car,black"
+  />
+  <div
+    className="card-body"
+  >
+    <div
+      className="font-weight-bold card-title h5"
+    >
+      <svg
+        color="red"
+        fill="currentColor"
+        height={20}
+        onClick={[MockFunction]}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": "red",
+          }
+        }
+        viewBox="0 0 16 16"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>
+          Add to Favourite
+        </title>
+        <path
+          clipRule="evenodd"
+          d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+          fillRule="evenodd"
+        />
+      </svg>
+       
+      Chevy Malibu 2020 Grey
+    </div>
+    <p
+      className="card-text"
+    >
+      <span
+        className="badge badge-secondary"
+      >
+        Automatic
+      </span>
+       
+       
+      <span
+        className="badge badge-pill badge-success"
+      >
+        AC -
+        yes
+      </span>
+       
+      <span
+        className="badge badge-info"
+      >
+        2021-01-22T19:37:44.393Z
+      </span>
+    </p>
+    <a
+      className="btn-oval p-2"
+      href="/cars/1"
+      onClick={[Function]}
+    >
+      Learn more
+    </a>
+  </div>
+</div>
+`;

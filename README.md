@@ -1,4 +1,4 @@
-# STOCKIST WEB APP - REACT CAPSTONE PROJECT
+# CAR RENTALS APP - FINAL CAPSTONE PROJECT
 
 In this project, I developed a frontend web application, Car Rentals using [Car Rentals API](https://financialmodelingprep.com/developer/docs/) I also develop, a requirement for my final capstone project to consume the data using React Application.
 

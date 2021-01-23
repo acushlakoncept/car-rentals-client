@@ -25,12 +25,12 @@ body {
     &__title {
       font-size: 22px;
       font-weight: 700;
-      text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.6);
+      text-shadow: 1px 2px 2px rgba($color: #000, $alpha: 0.6);
     }
 
     &__desc {
       font-weight: 100;
-      text-shadow: 0 1px 1px rgba($color: #000000, $alpha: 0.4);
+      text-shadow: 0 1px 1px rgba($color: #000, $alpha: 0.4);
     }
   }
 }
@@ -64,7 +64,7 @@ body {
   &__desc {
     font-weight: 100;
     font-size: 14px;
-    color: #000000;
+    color: #000;
   }
 }
 
@@ -127,7 +127,7 @@ body {
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;   
+  z-index: -1;
 }
 
 .form-control {

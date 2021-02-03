@@ -27,6 +27,25 @@ const favouriteReducer = (state = initialState, action) => {
         message: '',
         error: action.payload,
       };
+    case fav.REMOVE_FAVORITE_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case fav.REMOVE_FAVORITE_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        message: action.payload,
+        error: '',
+      };
+    case fav.REMOVE_FAVORITE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        message: '',
+        error: action.payload,
+      };
     default:
       return state;
   }

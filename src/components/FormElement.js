@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function FormElement({
   type, handleSubmit, username, password,
@@ -11,23 +11,21 @@ function FormElement({
   }, []);
 
   return (
-    <BrowserRouter>
-      <Form className="w-50" onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Control type="text" placeholder="Enter username" ref={username} />
-        </Form.Group>
+    <Form className="w-50" onSubmit={handleSubmit}>
+      <Form.Group controlId="formBasicEmail">
+        <Form.Control type="text" placeholder="Enter username" ref={username} />
+      </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Control type="password" placeholder="Password" ref={password} />
-        </Form.Group>
-        <Button className="btn-oval pl-4 pr-4" type="submit">
-          { type }
-        </Button>
-        <Link className="nav-link text-danger" to="/">
-          &larr; Back to home
-        </Link>
-      </Form>
-    </BrowserRouter>
+      <Form.Group controlId="formBasicPassword">
+        <Form.Control type="password" placeholder="Password" ref={password} />
+      </Form.Group>
+      <Button className="btn-oval pl-4 pr-4" type="submit">
+        { type }
+      </Button>
+      <Link className="nav-link text-danger" to="/">
+        &larr; Back to home
+      </Link>
+    </Form>
   );
 }
 

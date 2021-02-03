@@ -134,3 +134,12 @@ body {
   border-radius: 20px !important;
   padding: 5px 10px;
 }
+
+.modal-popup {
+  overflow: hidden;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

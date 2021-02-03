@@ -1,27 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { ScaleLoader } from 'react-spinners';
 import { Redirect } from 'react-router-dom';
+import Modal from 'react-awesome-modal';
 import CarItem from '../components/CarItem';
-import { fetchCars, addFavourites } from '../redux/actions';
+import { fetchCars, addFavourites, removeFavourites } from '../redux/actions';
 
 function CarContainer({ carData, getCars }) {
-  useEffect(() => {
-    getCars();
-  }, []);
-  const token = useSelector(state => state.user.token);
-  const favState = useSelector(state => state.favourites);
+  const [visible, setVisible] = useState(false);
+  const [fav, setFav] = useState('No');
+  const openModal = () => setVisible(true);
+  const closeModal = () => setVisible(false);
   const dispatch = useDispatch();
 
-  const handleFavourite = id => {
+  useEffect(() => {
+    getCars();
+    closeModal();
+  }, []);
+
+  const token = useSelector(state => state.user.token);
+  const favState = useSelector(state => state.favourites);
+
+  const handleFavourite = (id, favourit) => {
     const carInfo = {
       car_id: id,
     };
-    dispatch(addFavourites(carInfo));
-    // eslint-disable-next-line no-alert
-    alert(favState.message || favState.error);
+
+    setFav(favourit);
+
+    if (fav === 'Yes') {
+      dispatch(removeFavourites(id));
+      openModal();
+    } else {
+      dispatch(addFavourites(carInfo));
+      openModal();
+    }
+    getCars();
   };
 
   // eslint-disable-next-line no-nested-ternary
@@ -41,9 +57,15 @@ function CarContainer({ carData, getCars }) {
           <CarItem
             key={carInfo.id}
             car={carInfo}
-            handleFavourite={() => handleFavourite(carInfo.id)}
+            handleFavourite={() => handleFavourite(carInfo.id, carInfo.fav)}
           />
         )) }
+        <Modal visible={visible} width="300" height="100" effect="fadeInUp" onClickAway={() => closeModal()}>
+          <div className="modal-popup">
+            <p className="text-center">{favState.message || favState.error}</p>
+            <button type="button" className="btn-oval" onClick={() => closeModal()}>Close</button>
+          </div>
+        </Modal>
       </div>
     </Container>
   );

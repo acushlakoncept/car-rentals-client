@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import { ScaleLoader } from 'react-spinners';
 import FormElement from '../components/FormElement';
 import { loginUser } from '../redux/actions';
 
@@ -25,7 +26,12 @@ function LoginContainer({ logUserIn, userData }) {
     error = userData.error;
   }
 
-  return userData.token === undefined || userData.token === 'undefined'
+  // eslint-disable-next-line no-nested-ternary
+  return userData.loading ? (
+    <h2 className="text-center pt-5">
+      <ScaleLoader size={16} color="orange" />
+    </h2>
+  ) : userData.token === undefined || userData.token === 'undefined'
     ? (
       <>
         <h2 className="about-section__primary">Sign in</h2>

@@ -10,7 +10,6 @@ import { fetchCars, addFavourites, removeFavourites } from '../redux/actions';
 
 function CarContainer({ carData, getCars }) {
   const [visible, setVisible] = useState(false);
-  const [fav, setFav] = useState('No');
   const openModal = () => setVisible(true);
   const closeModal = () => setVisible(false);
   const dispatch = useDispatch();
@@ -28,9 +27,7 @@ function CarContainer({ carData, getCars }) {
       car_id: id,
     };
 
-    setFav(favourit);
-
-    if (fav === 'Yes') {
+    if (favourit === 'Yes') {
       dispatch(removeFavourites(id));
       openModal();
     } else {
